@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "905120743528",
+    "firebase_url": "https://fight-corona-ebefd.firebaseio.com",
+    "project_id": "fight-corona-ebefd",
+    "storage_bucket": "fight-corona-ebefd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905120743528:android:ab2993d2e6d063bf96bbdd",
+        "android_client_info": {
+          "package_name": "com.e.fight_corona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905120743528-e0uj2vs3snkbhfio04v9fmhtnalpmr8k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.e.fight_corona",
+            "certificate_hash": "7ee0d05e1c68f14e77fadaf6e0ce82864ee3636b"
+          }
+        },
+        {
+          "client_id": "905120743528-5qsio19fug1ii4ogf391sp5a0p7ub9e8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiT_Ok42a_0dUBzchQptmUQ8NneR04p9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905120743528-5qsio19fug1ii4ogf391sp5a0p7ub9e8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
