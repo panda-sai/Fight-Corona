@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="100dp">
+
+    <LinearLayout
+        android:id="@+id/layout_color"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fight Corona"
+            android:gravity="left"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/Black"
+            android:padding="16dp"
+            android:layout_margin="10dp"
+            android:id="@+id/answer"
+            />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello"
+                android:id="@+id/sender_doctor"
+                android:gravity="right"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                android:layout_marginRight="32dp"/>
+
+ </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -115,7 +115,6 @@ public class Registration extends AppCompatActivity
                             HashMap<String, String> hashMap= new HashMap<>();
                             hashMap.put("id",userid);
                             hashMap.put("username",usernameValue);
-                            hashMap.put("search",usernameValue.toLowerCase());
                             if(isDoctor)
                             {
                                 databaseReference= FirebaseDatabase.getInstance().getReference("Doctors").child(userid);
@@ -158,7 +157,7 @@ public class Registration extends AppCompatActivity
     }
     public void link2(View v)
     {
-        Intent intent = new Intent(Registration.this, MainActivity.class);
+        Intent intent = new Intent(Registration.this, Login.class);
         startActivity(intent);
 
     }

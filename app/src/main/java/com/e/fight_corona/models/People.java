@@ -4,13 +4,15 @@ public class People
 {
     private String id;
     private String username;
-    private boolean isDoctor;
+    public People()
+    {
 
-    public People(String id, String username, boolean isDoctor)
+    }
+
+    public People(String id, String username)
     {
         this.id = id;
         this.username = username;
-        this.isDoctor = isDoctor;
     }
 
     public String getId() {
@@ -29,13 +31,6 @@ public class People
         this.username = username;
     }
 
-    public boolean isDoctor() {
-        return isDoctor;
-    }
-
-    public void setDoctor(boolean doctor) {
-        isDoctor = doctor;
-    }
 }
 
 

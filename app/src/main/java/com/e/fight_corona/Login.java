@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity
+public class Login extends AppCompatActivity
 {
     private EditText emailTextView, passwordTextView;
     private Button Btn;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
         emailTextView = findViewById(R.id.email_login);
         passwordTextView = findViewById(R.id.password_login);
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity
         forgot_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,forgot_password.class));
+                startActivity(new Intent(Login.this,forgot_password.class));
             }
         });
 
@@ -68,25 +68,33 @@ public class MainActivity extends AppCompatActivity
 
                     return;
                 }
-                mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task)
-                    {
-                        if(task.isSuccessful())
+                try
+                {
+                    mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task)
                         {
-                            progressbar.setVisibility(View.INVISIBLE);
-                            Toast.makeText(v.getContext(),"Login successful!!",Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(MainActivity.this, Home.class);
-                            startActivity(intent);
+                            if(task.isSuccessful())
+                            {
+                                progressbar.setVisibility(View.INVISIBLE);
+                                Toast.makeText(v.getContext(),"Login successful!!",Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(Login.this, Home.class);
+                                startActivity(intent);
+                            }
+                            else
+                            {
+                                Toast.makeText(v.getContext(),"Login failed!!",Toast.LENGTH_LONG).show();
+                                // hide the progress bar
+                                progressbar.setVisibility(View.INVISIBLE);
+                            }
                         }
-                        else
-                        {
-                            Toast.makeText(v.getContext(),"Login failed!!",Toast.LENGTH_LONG).show();
-                            // hide the progress bar
-                            progressbar.setVisibility(View.INVISIBLE);
-                        }
-                    }
-                });
+                    });
+                }
+                catch (Exception e)
+                {
+                    Toast.makeText(v.getContext(),"Login failed!!"+e,Toast.LENGTH_LONG).show();
+                }
+
 
             }
         });
@@ -95,7 +103,7 @@ public class MainActivity extends AppCompatActivity
     }
     public void link(View v)
     {
-        Intent intent = new Intent(MainActivity.this, Registration.class);
+        Intent intent = new Intent(Login.this, Registration.class);
         startActivity(intent);
 
     }
