@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".Display_News_Answers">
+
+<TextView
+    android:id="@+id/news"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Question"/>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/reply"
+    android:text="Replay"
+    android:onClick="replay"
+    android:visibility="invisible"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:id="@+id/radio_group"
+        android:visibility="gone">
+        <RadioButton
+            android:id="@+id/radio_true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="True"
+            android:fontFamily="cursive"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:layout_marginRight="10dp"
+            android:textSize="18dp"
+            />
+        <RadioButton
+            android:id="@+id/radio_false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="False"
+            android:fontFamily="cursive"
+            android:textColor="@color/blue"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+        <RadioButton
+            android:id="@+id/radio_notsure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not Sure"
+            android:fontFamily="cursive"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+
+
+    </RadioGroup>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/submit"
+    android:text="submit"
+    android:visibility="gone"
+    android:onClick="submit"/>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Answer "
+    android:visibility="visible"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="visible"
+        android:id="@+id/answer"/>
+
+
+
+
+
+
+
+
+</LinearLayout>

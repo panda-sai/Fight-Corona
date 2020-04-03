@@ -10,8 +10,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
+import com.e.fight_corona.Adapters.NewsAdapter;
 import com.e.fight_corona.Adapters.QueryAdapter;
+import com.e.fight_corona.models.News;
 import com.e.fight_corona.models.People;
 import com.e.fight_corona.models.Query;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,33 +24,32 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Medic_home extends AppCompatActivity
+public class News_Analyse_Home extends AppCompatActivity
 {
     RecyclerView recyclerView;
-    List<Query> mquery;
-    QueryAdapter queryAdapter;
-    DatabaseReference reference;
-    FloatingActionButton floatingActionButton;
+    List<News> mNews;
+    NewsAdapter newsAdapter;
+    FloatingActionButton post_news;
     FirebaseUser fuser;
+    DatabaseReference reference;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_medic_home);
-        recyclerView=findViewById(R.id.recycler_view);
-        floatingActionButton=findViewById(R.id.floatingActionButton);
+        setContentView(R.layout.activity_news__analyse__home);
+        post_news=findViewById(R.id.post_news);
+        recyclerView=findViewById(R.id.recycler_view_diplay_news);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager =new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
+
         fuser= FirebaseAuth.getInstance().getCurrentUser();
-        reference=FirebaseDatabase.getInstance().getReference("Doctors").child(fuser.getUid());
+        reference= FirebaseDatabase.getInstance().getReference("Collaborators").child(fuser.getUid());
         reference.addValueEventListener(new ValueEventListener()
         {
             @SuppressLint("RestrictedApi")
@@ -57,7 +59,7 @@ public class Medic_home extends AppCompatActivity
                 People people=dataSnapshot.getValue(People.class);
                 if(people==null)
                 {
-                    floatingActionButton.setVisibility(View.VISIBLE);
+                    post_news.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -67,22 +69,23 @@ public class Medic_home extends AppCompatActivity
             }
         });
 
-        mquery=new ArrayList<>();
 
-        reference= FirebaseDatabase.getInstance().getReference("Questions");
+        mNews=new ArrayList<>();
+
+        reference= FirebaseDatabase.getInstance().getReference("News");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                mquery.clear();
+                mNews.clear();
                 for(DataSnapshot snapshot:dataSnapshot.getChildren())
                 {
-                    Query query=snapshot.getValue(Query.class);
-                    assert  query!=null;
-                    mquery.add(query);
-                    Log.i("Query",""+query);
-                    queryAdapter=new QueryAdapter(Medic_home.this,mquery);
-                    recyclerView.setAdapter(queryAdapter);
+                    News news=snapshot.getValue(News.class);
+                    assert  news!=null;
+                    mNews.add(news);
+                    newsAdapter=new NewsAdapter(News_Analyse_Home.this,mNews);
+                    recyclerView.setAdapter(newsAdapter);
+
 
                 }
             }
@@ -93,14 +96,10 @@ public class Medic_home extends AppCompatActivity
 
             }
         });
-
-
-
-
     }
-    public void Call_to_post_question(View v)
+    public void post_news(View v)
     {
-        Intent i=new Intent(Medic_home.this,Post_Question.class);
+        Intent i=new Intent(News_Analyse_Home.this,Post_news.class);
         startActivity(i);
 
     }

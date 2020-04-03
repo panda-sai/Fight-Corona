@@ -112,6 +112,7 @@ public class Display_Q_A extends AppCompatActivity
     public void replay(View v)
     {
         editText.setVisibility(View.VISIBLE);
+        editText.setText("");
         submit.setVisibility(View.VISIBLE);
 
 
@@ -137,9 +138,29 @@ public class Display_Q_A extends AppCompatActivity
             {
                 if(task.isSuccessful())
                 {
-                    Toast.makeText(Display_Q_A.this,"your review is submitted ",Toast.LENGTH_SHORT).show();
-                    editText.setVisibility(View.GONE);
-                    submit.setVisibility(View.GONE);
+                    final DatabaseReference reference2=FirebaseDatabase.getInstance().getReference("Questions").child(questionId);
+                    reference2.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+                        {
+                            Query query=dataSnapshot.getValue(Query.class);
+                            HashMap<String,Object> hashMap=new HashMap<>();
+                            hashMap.put("isanswered",true);
+                            reference2.updateChildren(hashMap);
+                            Toast.makeText(Display_Q_A.this,"your review is submitted ",Toast.LENGTH_SHORT).show();
+                            editText.setVisibility(View.GONE);
+                            submit.setVisibility(View.GONE);
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
+
 
                 }
                 else

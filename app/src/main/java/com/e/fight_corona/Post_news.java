@@ -21,18 +21,18 @@ import com.google.firebase.database.ServerValue;
 
 import java.util.HashMap;
 
-public class Post_Question extends AppCompatActivity
+public class Post_news extends AppCompatActivity
 {
     EditText textbox;
-    Button  post;
+    Button post;
     FirebaseUser fuser;
     DatabaseReference reference;
-    ProgressBar progressbar;
+    private ProgressBar progressbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post__question);
+        setContentView(R.layout.activity_post_news);
         textbox=findViewById(R.id.post_textbox);
         post=findViewById(R.id.post);
         fuser= FirebaseAuth.getInstance().getCurrentUser();
@@ -44,30 +44,30 @@ public class Post_Question extends AppCompatActivity
                 String msg=textbox.getText().toString();
                 if(!msg.equals(""))
                 {
-                    sendMessage(fuser.getUid(),msg);
+                    sendNews(fuser.getUid(),msg);
                 }
                 else
                 {
-                    Toast.makeText(Post_Question.this,"Enter something to send a message",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Post_news.this,"Enter something to send a message",Toast.LENGTH_SHORT).show();
                 }
                 textbox.setText("");
 
             }
         });
-
     }
-    public void sendMessage(String sender,String query)
+
+    public void sendNews(String sender,String news)
     {
         progressbar.setVisibility(View.VISIBLE);
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
         final HashMap<String,Object> hashMap=new HashMap<>();
         hashMap.put("sender",sender);
-        hashMap.put("query",query);
+        hashMap.put("news",news);
         hashMap.put("isanswered",false);
         hashMap.put("time", ServerValue.TIMESTAMP);
 
 
-        DatabaseReference x =reference.child("Questions").push();
+        DatabaseReference x =reference.child("News").push();
         hashMap.put("id", x.getKey());
         x.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -76,14 +76,14 @@ public class Post_Question extends AppCompatActivity
                 if(task.isSuccessful())
                 {
                     progressbar.setVisibility(View.INVISIBLE);
-                    Toast.makeText(Post_Question.this,"Query succesfully posted",Toast.LENGTH_SHORT).show();
-                    Intent i= new Intent(Post_Question.this,Medic_home.class);
+                    Toast.makeText(Post_news.this,"News succesfully posted",Toast.LENGTH_SHORT).show();
+                    Intent i= new Intent(Post_news.this,News_Analyse_Home.class);
                     startActivity(i);
                 }
                 else
                 {
                     progressbar.setVisibility(View.INVISIBLE);
-                    Toast.makeText(Post_Question.this,"Query failed to post",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Post_news.this,"News failed to post",Toast.LENGTH_SHORT).show();
                 }
 
             }

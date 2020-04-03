@@ -34,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
                     android:fontFamily="cursive"
-                    android:text="Fight_Corona"
+                    android:text="Medical support "
                     android:textColor="@color/White"
                     android:textSize="22sp"
                     android:textStyle="bold" />

@@ -97,6 +97,16 @@ android:gravity="center_vertical">
             android:text="Public"
             android:fontFamily="cursive"
             android:textColor="@color/blue"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+        <RadioButton
+            android:id="@+id/radio_collaborators"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Colloborators"
+            android:fontFamily="cursive"
+            android:textColor="@color/blue"
             android:textStyle="bold"
             android:textSize="18dp"/>
 
