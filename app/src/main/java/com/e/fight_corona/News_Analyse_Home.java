@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.e.fight_corona.Adapters.NewsAdapter;
 import com.e.fight_corona.Adapters.QueryAdapter;
+import com.e.fight_corona.Comparators.Newscomparator;
 import com.e.fight_corona.models.News;
 import com.e.fight_corona.models.People;
 import com.e.fight_corona.models.Query;
@@ -27,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class News_Analyse_Home extends AppCompatActivity
@@ -83,11 +85,13 @@ public class News_Analyse_Home extends AppCompatActivity
                     News news=snapshot.getValue(News.class);
                     assert  news!=null;
                     mNews.add(news);
+                    Collections.sort(mNews,new Newscomparator());
                     newsAdapter=new NewsAdapter(News_Analyse_Home.this,mNews);
                     recyclerView.setAdapter(newsAdapter);
 
 
                 }
+
             }
 
             @Override

@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.e.fight_corona.Adapters.AnswerAdapter;
 import com.e.fight_corona.Adapters.QueryAdapter;
+import com.e.fight_corona.Comparators.Answercomparator;
+import com.e.fight_corona.Comparators.Querycomparator;
 import com.e.fight_corona.models.Answer;
 import com.e.fight_corona.models.People;
 import com.e.fight_corona.models.Query;
@@ -30,6 +32,7 @@ import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -187,11 +190,11 @@ public class Display_Q_A extends AppCompatActivity
                     if(answer.getQuestionId().equals(questionId))
                     {
                         manswer.add(answer);
-                        answerAdapter=new AnswerAdapter(Display_Q_A.this,manswer);
-                        recyclerView.setAdapter(answerAdapter);
-
                     }
                 }
+                Collections.sort(manswer,new Answercomparator());
+                answerAdapter=new AnswerAdapter(Display_Q_A.this,manswer);
+                recyclerView.setAdapter(answerAdapter);
             }
 
             @Override

@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.e.fight_corona.Adapters.QueryAdapter;
+import com.e.fight_corona.Comparators.Querycomparator;
 import com.e.fight_corona.models.People;
 import com.e.fight_corona.models.Query;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,6 +26,7 @@ import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Medic_home extends AppCompatActivity
@@ -81,10 +83,12 @@ public class Medic_home extends AppCompatActivity
                     assert  query!=null;
                     mquery.add(query);
                     Log.i("Query",""+query);
-                    queryAdapter=new QueryAdapter(Medic_home.this,mquery);
-                    recyclerView.setAdapter(queryAdapter);
+
 
                 }
+                Collections.sort(mquery,new Querycomparator());
+                queryAdapter=new QueryAdapter(Medic_home.this,mquery);
+                recyclerView.setAdapter(queryAdapter);
             }
 
             @Override
