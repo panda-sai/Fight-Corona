@@ -51,7 +51,7 @@ public class corono_news extends AppCompatActivity
 
 
 
-        String myUrl = "http://newsapi.org/v2/top-headlines?country=in&apiKey=4b02ecab85ac4ca3a30e01c827a7bed8";
+        String myUrl = "https://newsapi.org/v2/everything?q=corona&apiKey=4b02ecab85ac4ca3a30e01c827a7bed8";
 
         HttpGetRequest getRequest = new HttpGetRequest();
         getRequest.execute(myUrl);
