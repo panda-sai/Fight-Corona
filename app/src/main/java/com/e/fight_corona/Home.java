@@ -9,7 +9,7 @@ import android.view.View;
 
 public class Home extends AppCompatActivity
 {
-    CardView medicalSupport,news_analyser;
+    CardView medicalSupport,news_analyser,latestNews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,16 @@ public class Home extends AppCompatActivity
             {
                 Intent i= new Intent(Home.this,News_Analyse_Home.class);
                 startActivity(i);
+            }
+        });
+        latestNews=findViewById(R.id.corona_news);
+        latestNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i= new Intent(Home.this,corono_news.class);
+                startActivity(i);
+
             }
         });
 
