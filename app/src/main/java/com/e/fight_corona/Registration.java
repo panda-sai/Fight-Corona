@@ -33,7 +33,7 @@ public class Registration extends AppCompatActivity
     private EditText username,password,confirmPassword,email;
     private Button register;
     private RadioGroup role;
-    private RadioButton doctor,people,collaborators;
+    private RadioButton doctor,people,collaborators,volenteer;
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
     private ProgressBar progressbar;
@@ -54,6 +54,7 @@ public class Registration extends AppCompatActivity
         progressbar = findViewById(R.id.progressbar);
         checkBox=findViewById(R.id.checkbox);
         collaborators=findViewById(R.id.radio_collaborators);
+        volenteer=findViewById(R.id.volunteer);
 
         mAuth = FirebaseAuth.getInstance();
         register.setOnClickListener(new View.OnClickListener() {
@@ -62,13 +63,14 @@ public class Registration extends AppCompatActivity
             {
                 progressbar.setVisibility(View.VISIBLE);
                 final String emailValue, passwordValue,usernameValue,confirmPasswordValue;
-                final boolean isDoctor,isCollaborators;
+                final boolean isDoctor,isCollaborators,isvol;
                 usernameValue=username.getText().toString();
                 emailValue = email.getText().toString();
                 passwordValue = password.getText().toString();
                 confirmPasswordValue = confirmPassword.getText().toString();
                 isDoctor=doctor.isChecked();
                 isCollaborators=collaborators.isChecked();
+                isvol=volenteer.isChecked();
                 if (TextUtils.isEmpty(usernameValue))
                 {
                     Toast.makeText(getApplicationContext(),"Please enter Username!!",Toast.LENGTH_LONG).show();
@@ -124,6 +126,10 @@ public class Registration extends AppCompatActivity
                             if(isCollaborators)
                             {
                                 databaseReference= FirebaseDatabase.getInstance().getReference("Collaborators").child(userid);
+                            }
+                            if(isvol)
+                            {
+                                databaseReference= FirebaseDatabase.getInstance().getReference("Volunteers").child(userid);
                             }
                             else
                             {

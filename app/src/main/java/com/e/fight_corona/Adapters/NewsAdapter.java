@@ -68,6 +68,24 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot)
                         {
                             People people2=dataSnapshot.getValue(People.class);
+                            if(people2==null)
+                            {
+                                DatabaseReference reference2 =FirebaseDatabase.getInstance().getReference("Volunteers").child(news.getSender());
+                                reference2.addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+                                    {
+                                        People people3=dataSnapshot.getValue(People.class);
+                                        holder.sender.setText(people3.getUsername());
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                    }
+                                });
+                            }
+                            else
                             holder.sender.setText(people2.getUsername());
                         }
 
@@ -92,10 +110,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>
         });
         if(news.isIsanswered())
         {
-            holder.layoutcolor.setBackgroundColor(R.color.green);
+            holder.layoutcolor.setBackgroundColor(mcontext.getResources().getColor(R.color.darkgreen));
         }
         else {
-            holder.layoutcolor.setBackgroundColor(5);
+            holder.layoutcolor.setBackgroundColor(mcontext.getResources().getColor(R.color.red));
 
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {

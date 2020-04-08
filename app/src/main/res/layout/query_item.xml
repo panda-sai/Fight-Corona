@@ -4,38 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="4dp"
-    app:cardElevation="100dp">
+    android:layout_margin="10dp"
+    app:cardElevation="6dp">
 
     <LinearLayout
         android:id="@+id/layout_color"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fight Corona"
+            android:text="Query"
             android:gravity="left"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/Black"
+            android:textStyle="italic"
+            android:textColor="@color/newWhite"
             android:padding="16dp"
             android:layout_margin="10dp"
-            android:id="@+id/query"
-            />
+            android:id="@+id/query" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hello"
                 android:id="@+id/sender"
+                android:textStyle="italic"
                 android:gravity="right"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/blue"
-                android:layout_marginRight="32dp"/>
+                android:textColor="@color/newWhite"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"/>
 
 
 

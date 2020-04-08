@@ -31,12 +31,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class News_Analyse_Home extends AppCompatActivity
 {
     RecyclerView recyclerView;
     List<News> mNews;
     NewsAdapter newsAdapter;
-    FloatingActionButton post_news;
+    CircleImageView post_news;
     FirebaseUser fuser;
     DatabaseReference reference;
 

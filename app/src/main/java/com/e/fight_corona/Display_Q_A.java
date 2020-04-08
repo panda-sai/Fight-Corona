@@ -114,6 +114,7 @@ public class Display_Q_A extends AppCompatActivity
     }
     public void replay(View v)
     {
+        replay_btn.setVisibility(View.GONE);
         editText.setVisibility(View.VISIBLE);
         editText.setText("");
         submit.setVisibility(View.VISIBLE);
@@ -153,6 +154,7 @@ public class Display_Q_A extends AppCompatActivity
                             Toast.makeText(Display_Q_A.this,"your review is submitted ",Toast.LENGTH_SHORT).show();
                             editText.setVisibility(View.GONE);
                             submit.setVisibility(View.GONE);
+                            replay_btn.setVisibility(View.VISIBLE);
 
 
                         }

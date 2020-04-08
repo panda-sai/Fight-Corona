@@ -25,18 +25,17 @@ android:orientation="vertical">
                 android:id="@+id/profile_image"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/logo"/>
+                android:src="@drawable/logo2"/>
 
             <TextView
                 android:id="@+id/Username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:fontFamily="cursive"
                 android:text="News Analyser"
                 android:textColor="@color/White"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="italic" />
 
 
 
@@ -55,17 +54,18 @@ android:orientation="vertical">
 
 
 </LinearLayout>
-<com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:id="@+id/post_news"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:clickable="true"
-    app:srcCompat="@android:drawable/btn_radio"
-    android:layout_alignParentEnd="true"
-    android:layout_alignParentBottom="true"
-    android:layout_margin="50dp"
-    android:onClick="post_news"
-    android:visibility="invisible"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/post_news"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:clickable="true"
+        android:src="@drawable/logo2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="50dp"
+        android:onClick="post_news"
+        android:visibility="invisible"/>
 
 
 

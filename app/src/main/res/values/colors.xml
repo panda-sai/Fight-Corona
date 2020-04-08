@@ -5,9 +5,13 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="Orange">#ec5800</color>
     <color name="White">#ffffff</color>
+    <color name="newWhite">#fcfcfc</color>
     <color name="Black">#010101</color>
     <color name="blue">#5C6BC0</color>
     <color name="yellow">#fdfb0b</color>
     <color name="green">#90ee90</color>
     <color name="lightgray">#C0C0C0</color>
+    <color name="darkgreen">#005221</color>
+    <color name="red">#ce0018</color>
+    <color name="my_spinner_text_color">#808080</color>
 </resources>

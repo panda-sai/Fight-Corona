@@ -29,13 +29,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Medic_home extends AppCompatActivity
 {
     RecyclerView recyclerView;
     List<Query> mquery;
     QueryAdapter queryAdapter;
     DatabaseReference reference;
-    FloatingActionButton floatingActionButton;
+    CircleImageView floatingActionButton;
     FirebaseUser fuser;
 
     @Override
