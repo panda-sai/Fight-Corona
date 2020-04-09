@@ -3,6 +3,7 @@ package com.e.fight_corona;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -21,13 +22,13 @@ public class About extends AppCompatActivity {
         if(id==R.id.panda)
             url="https://www.linkedin.com/in/sai-sankara-kesava-nath-panda-ab3b8a18b";
         else if(id==R.id.heshwa)
-            url="www.linkedin.com/in/heshwa-baskaran";
+            url="https://www.linkedin.com/in/heshwa";
         else
             url="http://www.linkedin.com/in/badam-nikhil-7253a3184";
 
 
-        Intent intent=new Intent(About.this, Browser.class);
-        intent.putExtra("url",url);
-        startActivity(intent);
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
     }
 }
