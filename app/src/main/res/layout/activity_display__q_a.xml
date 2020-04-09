@@ -6,24 +6,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Display_Q_A"
-    android:orientation="vertical">
-    <TextView
-        android:id="@+id/question"
+    android:orientation="vertical"
+    android:background="@drawable/cardbg">
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Question"/>
+        android:layout_margin="10dp"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:id="@+id/layout_color"
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/Black"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="italic"
+                android:textColor="@color/White"
+                android:padding="16dp"
+                android:layout_margin="10dp"
+                android:id="@+id/question"
+                android:background="@color/red"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/reply"
-        android:text="Replay"
+        android:text="Give Your Answers"
         android:onClick="replay"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:background="@drawable/bg_login_buuton"
+        android:layout_margin="10dp"
+        android:padding="10dp"/>
+
     <EditText
+        android:id="@+id/editbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Answer"
-        android:id="@+id/editbox"
+        android:hint="Give your answers"
+        android:background="@drawable/field2"
+        android:layout_margin="10dp"
+        android:padding="10dp"
         android:visibility="gone"/>
     <Button
         android:layout_width="wrap_content"
@@ -31,16 +74,38 @@
         android:id="@+id/submit"
         android:text="submit"
         android:visibility="gone"
-        android:onClick="submit"/>
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Answer"/>
-
-    <androidx.recyclerview.widget.RecyclerView
+        android:onClick="submit"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_login_buuton" />
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recycler_view_display_Q_A"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardElevation="6dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Answers"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/Black"
+                android:layout_margin="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recycler_view_display_Q_A"/>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
 
 
 

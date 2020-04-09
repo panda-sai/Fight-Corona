@@ -10,8 +10,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.e.fight_corona.Adapters.QueryAdapter;
+import com.e.fight_corona.Comparators.Querycomparator;
 import com.e.fight_corona.models.People;
 import com.e.fight_corona.models.Query;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,7 +27,10 @@ import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Medic_home extends AppCompatActivity
 {
@@ -33,8 +38,9 @@ public class Medic_home extends AppCompatActivity
     List<Query> mquery;
     QueryAdapter queryAdapter;
     DatabaseReference reference;
-    FloatingActionButton floatingActionButton;
+    CircleImageView floatingActionButton;
     FirebaseUser fuser;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,11 +49,13 @@ public class Medic_home extends AppCompatActivity
         setContentView(R.layout.activity_medic_home);
         recyclerView=findViewById(R.id.recycler_view);
         floatingActionButton=findViewById(R.id.floatingActionButton);
+        progressBar=findViewById(R.id.progressbar);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager =new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         fuser= FirebaseAuth.getInstance().getCurrentUser();
-        reference=FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
+        reference=FirebaseDatabase.getInstance().getReference("Doctors").child(fuser.getUid());
+        progressBar.setVisibility(View.VISIBLE);
         reference.addValueEventListener(new ValueEventListener()
         {
             @SuppressLint("RestrictedApi")
@@ -55,7 +63,7 @@ public class Medic_home extends AppCompatActivity
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
                 People people=dataSnapshot.getValue(People.class);
-                if(people!=null)
+                if(people==null)
                 {
                     floatingActionButton.setVisibility(View.VISIBLE);
                 }
@@ -81,10 +89,13 @@ public class Medic_home extends AppCompatActivity
                     assert  query!=null;
                     mquery.add(query);
                     Log.i("Query",""+query);
-                    queryAdapter=new QueryAdapter(Medic_home.this,mquery);
-                    recyclerView.setAdapter(queryAdapter);
+
 
                 }
+                Collections.sort(mquery,new Querycomparator());
+                progressBar.setVisibility(View.INVISIBLE);
+                queryAdapter=new QueryAdapter(Medic_home.this,mquery);
+                recyclerView.setAdapter(queryAdapter);
             }
 
             @Override

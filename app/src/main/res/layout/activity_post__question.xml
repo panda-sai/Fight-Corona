@@ -5,13 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Post_Question">
+    tools:context=".Post_Question"
+    android:layout_gravity="center"
+    android:padding="32dp"
+    android:background="@drawable/cardbg">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Post Your doubts in the form"
+        android:gravity="center_horizontal"
+        android:textSize="30dp"
+        android:textStyle="italic"
+        android:textColor="@color/White"
+        android:layout_marginTop="30dp"/>
     <EditText
         android:id="@+id/post_textbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="   Enter the Query"
-        android:background="@drawable/field"
+        android:hint="Enter your Query"
+        android:background="@drawable/field2"
         android:layout_marginTop="30dp"
         android:padding="10dp"/>
     <ProgressBar

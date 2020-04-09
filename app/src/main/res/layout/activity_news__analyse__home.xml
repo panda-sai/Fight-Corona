@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".News_Analyse_Home"
+    android:background="@drawable/cardbg">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:popupTheme="@style/Widget.AppCompat.Light.DropDownItem.Spinner">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/profile_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/logo2"/>
+
+            <TextView
+                android:id="@+id/Username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:text="News Analyser"
+                android:textColor="@color/White"
+                android:textSize="22sp"
+                android:textStyle="italic" />
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_view_diplay_news" />
+
+
+
+
+
+</LinearLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/post_news"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:clickable="true"
+        android:src="@drawable/logo2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="50dp"
+        android:onClick="post_news"
+        android:visibility="invisible"/>
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" />
+
+
+
+
+
+
+</RelativeLayout>

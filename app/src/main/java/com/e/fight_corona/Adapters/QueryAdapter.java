@@ -57,8 +57,46 @@ public class QueryAdapter extends RecyclerView.Adapter<QueryAdapter.ViewHolder>
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                People people=dataSnapshot.getValue(People.class);
-                holder.sender.setText(people.getUsername());
+                final People people=dataSnapshot.getValue(People.class);
+                if(people==null)
+                {
+                    DatabaseReference reference2 =FirebaseDatabase.getInstance().getReference("Collaborators").child(query.getSender());
+                    reference2.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+                        {
+
+                            People people2=dataSnapshot.getValue(People.class);
+                            if(people2==null)
+                            {
+                                DatabaseReference reference3=FirebaseDatabase.getInstance().getReference("Volunteers").child(query.getSender());
+                                reference3.addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        People people4=dataSnapshot.getValue(People.class);
+                                        holder.sender.setText(people4.getUsername());
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                    }
+                                });
+                            }
+                            else
+                            holder.sender.setText(people2.getUsername());
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+                else{
+                    holder.sender.setText(people.getUsername());
+                }
+
 
             }
 
@@ -70,10 +108,10 @@ public class QueryAdapter extends RecyclerView.Adapter<QueryAdapter.ViewHolder>
         });
         if(query.isIsanswered())
         {
-            holder.layoutcolor.setBackgroundColor(R.color.blue);
+            holder.layoutcolor.setBackgroundColor(mcontext.getResources().getColor(R.color.darkgreen));
         }
         else {
-            holder.layoutcolor.setBackgroundColor(R.color.lightgray);
+            holder.layoutcolor.setBackgroundColor(mcontext.getResources().getColor(R.color.red));
 
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {

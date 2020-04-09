@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Suport"
+    android:background="@drawable/cardbg"
+    android:padding="30dp"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Support others"
+        android:gravity="center_horizontal"
+        android:textSize="40dp"
+        android:textStyle="italic"
+        android:textColor="@color/White"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" How do you want to contribute?"
+        android:gravity="center_horizontal"
+        android:textSize="30dp"
+        android:textStyle="italic"
+        android:textColor="@color/White"
+        android:layout_marginTop="30dp"/>
+
+<RadioGroup
+    android:id="@+id/rg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="40dp"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <RadioButton
+        android:id="@+id/food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Food"
+        android:onClick="oc"
+        android:textColor="@color/White"
+        android:textStyle="italic"
+        />
+
+    <RadioButton
+        android:id="@+id/money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:onClick="oc"
+        android:text="Money"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/White"
+        android:textStyle="italic"/>
+</RadioGroup>
+
+</LinearLayout>

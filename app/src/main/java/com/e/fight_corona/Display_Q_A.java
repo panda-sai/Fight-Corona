@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.e.fight_corona.Adapters.AnswerAdapter;
 import com.e.fight_corona.Adapters.QueryAdapter;
+import com.e.fight_corona.Comparators.Answercomparator;
+import com.e.fight_corona.Comparators.Querycomparator;
 import com.e.fight_corona.models.Answer;
 import com.e.fight_corona.models.People;
 import com.e.fight_corona.models.Query;
@@ -30,6 +32,7 @@ import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -111,7 +114,9 @@ public class Display_Q_A extends AppCompatActivity
     }
     public void replay(View v)
     {
+        replay_btn.setVisibility(View.GONE);
         editText.setVisibility(View.VISIBLE);
+        editText.setText("");
         submit.setVisibility(View.VISIBLE);
 
 
@@ -137,9 +142,30 @@ public class Display_Q_A extends AppCompatActivity
             {
                 if(task.isSuccessful())
                 {
-                    Toast.makeText(Display_Q_A.this,"your review is submitted ",Toast.LENGTH_SHORT).show();
-                    editText.setVisibility(View.GONE);
-                    submit.setVisibility(View.GONE);
+                    final DatabaseReference reference2=FirebaseDatabase.getInstance().getReference("Questions").child(questionId);
+                    reference2.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+                        {
+                            Query query=dataSnapshot.getValue(Query.class);
+                            HashMap<String,Object> hashMap=new HashMap<>();
+                            hashMap.put("isanswered",true);
+                            reference2.updateChildren(hashMap);
+                            Toast.makeText(Display_Q_A.this,"your review is submitted ",Toast.LENGTH_SHORT).show();
+                            editText.setVisibility(View.GONE);
+                            submit.setVisibility(View.GONE);
+                            replay_btn.setVisibility(View.VISIBLE);
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
+
 
                 }
                 else
@@ -166,11 +192,11 @@ public class Display_Q_A extends AppCompatActivity
                     if(answer.getQuestionId().equals(questionId))
                     {
                         manswer.add(answer);
-                        answerAdapter=new AnswerAdapter(Display_Q_A.this,manswer);
-                        recyclerView.setAdapter(answerAdapter);
-
                     }
                 }
+                Collections.sort(manswer,new Answercomparator());
+                answerAdapter=new AnswerAdapter(Display_Q_A.this,manswer);
+                recyclerView.setAdapter(answerAdapter);
             }
 
             @Override

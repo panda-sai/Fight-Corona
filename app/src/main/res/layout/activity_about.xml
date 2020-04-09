@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".About"
+    android:background="@drawable/cardbg">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About us\nDaksha Prajapatih"
+            android:gravity="center_horizontal"
+            android:textSize="30dp"
+            android:textStyle="italic"
+            android:textColor="@color/White"
+            android:layout_marginTop="30dp"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/guys" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:src="@drawable/panda"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Panda Sai Sankara Kesava Nath"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:id="@+id/panda"
+                    android:onClick="linkedIn"
+                    android:textColor="@color/blue"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="YouTuber @ Vamsi Bhavani | Student | Android Developer | Udemy Instructor | Machine Learning Enthusiast | Core Member @ RCS "
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Heshwa"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:id="@+id/heshwa"
+                    android:onClick="linkedIn"
+                    android:textColor="@color/blue"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Fascinated by robotics | Drawn into ocean of AI |Emerging Data scientist and Software Developer | Core Member @ RCS "
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:src="@drawable/heshwa"
+                android:layout_margin="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:src="@drawable/nikhil"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Nikhil"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:id="@+id/nikil"
+                    android:onClick="linkedIn"
+                    android:textColor="@color/blue"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Technology enthusiast | Communication engineer but interested in AI, ML, coding | Core Member @ RCS "
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/White"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Acknowledgement"
+                android:textColor="@color/White"
+                android:fontFamily="serif-monospace"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:text="Live News Content - newsapi.org"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:text="Location Service - Google Maps API"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact us:"
+                android:fontFamily="serif-monospace"
+                android:textColor="@color/White"
+                android:textSize="20dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="contact.fightcorona@gmail.com"
+                android:textColor="@color/White"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
+
+</LinearLayout>

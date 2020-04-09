@@ -33,7 +33,7 @@ public class Registration extends AppCompatActivity
     private EditText username,password,confirmPassword,email;
     private Button register;
     private RadioGroup role;
-    private RadioButton doctor,people;
+    private RadioButton doctor,people,collaborators,volenteer;
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
     private ProgressBar progressbar;
@@ -53,6 +53,8 @@ public class Registration extends AppCompatActivity
         people=findViewById(R.id.radio_public);
         progressbar = findViewById(R.id.progressbar);
         checkBox=findViewById(R.id.checkbox);
+        collaborators=findViewById(R.id.radio_collaborators);
+        volenteer=findViewById(R.id.volunteer);
 
         mAuth = FirebaseAuth.getInstance();
         register.setOnClickListener(new View.OnClickListener() {
@@ -61,12 +63,15 @@ public class Registration extends AppCompatActivity
             {
                 progressbar.setVisibility(View.VISIBLE);
                 final String emailValue, passwordValue,usernameValue,confirmPasswordValue;
-                final boolean isDoctor;
+                final boolean isDoctor,isCollaborators,isvol,isuser;
                 usernameValue=username.getText().toString();
                 emailValue = email.getText().toString();
                 passwordValue = password.getText().toString();
                 confirmPasswordValue = confirmPassword.getText().toString();
+                isuser=people.isChecked();
                 isDoctor=doctor.isChecked();
+                isCollaborators=collaborators.isChecked();
+                isvol=volenteer.isChecked();
                 if (TextUtils.isEmpty(usernameValue))
                 {
                     Toast.makeText(getApplicationContext(),"Please enter Username!!",Toast.LENGTH_LONG).show();
@@ -119,7 +124,15 @@ public class Registration extends AppCompatActivity
                             {
                                 databaseReference= FirebaseDatabase.getInstance().getReference("Doctors").child(userid);
                             }
-                            else
+                            if(isCollaborators)
+                            {
+                                databaseReference= FirebaseDatabase.getInstance().getReference("Collaborators").child(userid);
+                            }
+                            if(isvol)
+                            {
+                                databaseReference= FirebaseDatabase.getInstance().getReference("Volunteers").child(userid);
+                            }
+                            if(isuser)
                             {
                                 databaseReference= FirebaseDatabase.getInstance().getReference("Users").child(userid);
 
@@ -160,6 +173,12 @@ public class Registration extends AppCompatActivity
         Intent intent = new Intent(Registration.this, Login.class);
         startActivity(intent);
 
+    }
+    public void terms(View v)
+    {
+        Intent intent=new Intent(Registration.this, Browser.class);
+        intent.putExtra("url","https://www.websitepolicies.com/policies/view/FjRKs0Lh");
+       startActivity(intent);
     }
 
 

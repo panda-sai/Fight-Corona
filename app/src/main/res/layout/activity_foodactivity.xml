@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="20dp"
+tools:context=".foodactivity">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Enter the details:"
+    android:textColor="@color/Black"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="10dp"
+    />
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:inputType="text"
+    android:textColor="@color/White"
+    android:hint="Enter your name:"
+    android:layout_marginTop="10dp"
+    android:padding="10dp"
+    android:background="@drawable/field2"
+    android:id="@+id/name"
+    />
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter mobile no.:"
+    android:inputType="number"
+    android:id="@+id/number"
+    android:layout_marginTop="10dp"
+    android:padding="10dp"
+    android:background="@drawable/field2"
+    />
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Food capacity(in people):"
+    android:inputType="number"
+    android:id="@+id/foodcapacity"
+    android:layout_marginTop="10dp"
+    android:padding="10dp"
+    android:background="@drawable/field2"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address:"
+        android:id="@+id/location"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:background="@drawable/field2"/>
+<TextView
+    android:layout_marginTop="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:text="Enter Food availability time:"
+    android:textColor="@color/Black" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:orientation="horizontal">
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/hrs"
+        android:id="@+id/hrs"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hrs:"
+        android:textColor="@color/Black"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:entries="@array/min"
+        android:id="@+id/min"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min"
+        android:textColor="@color/Black"/>
+</LinearLayout>
+<TextView
+    android:layout_marginTop="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:text="Enter Food availability Date:"
+    android:textColor="@color/Black"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:orientation="horizontal">
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/date"
+        android:id="@+id/date"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DD"
+        android:textColor="@color/Black"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:entries="@array/month"
+        android:id="@+id/mm"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MM"
+        android:textColor="@color/Black"/>
+
+
+</LinearLayout>
+
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Submit"
+    android:layout_gravity="center_horizontal"
+    android:onClick="submit1"
+    android:background="@drawable/bg_login_buuton" />
+
+
+</LinearLayout>

@@ -27,7 +27,7 @@ public class Post_Question extends AppCompatActivity
     Button  post;
     FirebaseUser fuser;
     DatabaseReference reference;
-    private ProgressBar progressbar;
+    ProgressBar progressbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

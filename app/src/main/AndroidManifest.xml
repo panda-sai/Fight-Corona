@@ -2,17 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.e.fight_corona">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo2"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Display_Q_A"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".About"></activity>
+        <activity android:name=".Volunteer" />
+        <activity android:name=".moneyactivity" />
+        <activity android:name=".foodactivity" />
+        <activity android:name=".Suport" />
+        <activity android:name=".Browser" />
+        <activity android:name=".corono_news" />
+        <activity android:name=".Display_News_Answers" />
+        <activity android:name=".Post_news" />
+        <activity android:name=".News_Analyse_Home" />
+        <activity android:name=".Display_Q_A" />
         <activity android:name=".Post_Question" />
         <activity android:name=".Login" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".Medic_home" />
         <activity android:name=".Home" />
         <activity android:name=".forgot_password" />

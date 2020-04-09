@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".moneyactivity"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:background="@drawable/cardbg"
+    android:gravity="center">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter your name and the amount you want to contibute"
+        android:gravity="center_horizontal"
+        android:textSize="29dp"
+        android:textStyle="italic"
+        android:textColor="@color/White"
+        android:layout_marginTop="30dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameET"
+        android:hint="Enter your name"
+        android:background="@drawable/field2"
+        android:padding="10dp"
+
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/amountET"
+        android:inputType="numberSigned"
+        android:hint="Enter the amount"
+        android:background="@drawable/field2"
+        android:padding="10dp"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/payButon"
+        android:text="submit"
+        android:background="@drawable/bg_login_buuton"
+        android:layout_margin="30dp"/>
+
+
+</LinearLayout>

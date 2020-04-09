@@ -1,6 +1,7 @@
 package com.e.fight_corona;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,16 +10,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.e.fight_corona.Adapters.startupFragmentAdapter;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class startup extends AppCompatActivity
 {
-    private Button register,login;
+    private Button register;
+    TextView login;
     FirebaseUser firebaseUser;
     ImageView imageView;
-    LinearLayout linearLayout;
+    TabLayout tabLayout;
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,7 +33,11 @@ public class startup extends AppCompatActivity
         setContentView(R.layout.activity_startup);
         register=findViewById(R.id.Register);
         login=findViewById(R.id.login);
-        linearLayout=findViewById(R.id.main_layout1);
+        viewPager= findViewById(R.id.Viewpager_startup);
+        tabLayout=findViewById(R.id.tablayout_startup);
+        startupFragmentAdapter pageAdapter= new startupFragmentAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(pageAdapter);
+        tabLayout.setupWithViewPager(viewPager);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +82,6 @@ public class startup extends AppCompatActivity
                 else
                 {
                     imageView.setVisibility(View.GONE);
-                    linearLayout.setVisibility(View.VISIBLE);
 
                 }
 
