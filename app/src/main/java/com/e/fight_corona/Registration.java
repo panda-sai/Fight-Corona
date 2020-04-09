@@ -173,6 +173,12 @@ public class Registration extends AppCompatActivity
         startActivity(intent);
 
     }
+    public void terms(View v)
+    {
+        Intent intent=new Intent(Registration.this, Browser.class);
+        intent.putExtra("url","https://www.websitepolicies.com/policies/view/FjRKs0Lh");
+       startActivity(intent);
+    }
 
 
 }
