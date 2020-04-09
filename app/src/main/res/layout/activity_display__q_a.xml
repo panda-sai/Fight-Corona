@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Display_Q_A"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Question"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reply"
+        android:text="Replay"
+        android:onClick="replay"
+        android:visibility="invisible"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Answer"
+        android:id="@+id/editbox"
+        android:visibility="gone"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit"
+        android:text="submit"
+        android:visibility="gone"
+        android:onClick="submit"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Answer"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_view_display_Q_A"/>
+
+
+
+
+
+</LinearLayout>

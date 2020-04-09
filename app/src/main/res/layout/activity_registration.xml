@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Registration"
+android:orientation="vertical"
+android:gravity="center_vertical">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fight Corona"
+        android:gravity="center_horizontal"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:fontFamily="cursive"
+        android:textColor="@color/blue"/>
+
+    <!-- TextView for heading -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register Form"
+        android:gravity="center_horizontal"
+        android:textSize="24dp"
+        android:fontFamily="cursive"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="User Name"
+        android:background="@drawable/field"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Email Id"
+        android:background="@drawable/field"
+        android:layout_marginTop="25dp"
+        android:padding="10dp"/>
+
+    <EditText
+    android:id="@+id/password"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:inputType="textPassword"
+    android:hint="Password"
+    android:background="@drawable/field"
+    android:layout_marginTop="25dp"
+    android:padding="10dp"/>
+    <EditText
+        android:id="@+id/confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Confirm Password"
+        android:background="@drawable/field"
+        android:layout_marginTop="25dp"
+        android:padding="10dp"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+        <RadioButton
+            android:id="@+id/radio_doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor"
+            android:fontFamily="cursive"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:layout_marginRight="10dp"
+            android:textSize="18dp"/>
+        <RadioButton
+            android:id="@+id/radio_public"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Public"
+            android:fontFamily="cursive"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+
+
+    </RadioGroup>
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Accept the Terms and conditions"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingTop="10dp"
+        android:layout_marginTop="10dp"/>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:background="@drawable/bg_login_buuton"
+        android:layout_marginTop="70dp"/>
+
+
+
+</LinearLayout>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Already have an account ?"
+    android:textStyle="bold"
+    android:layout_gravity="center_horizontal"
+    android:textColor="@color/colorPrimaryDark"
+    android:onClick="link2"/>
+
+
+
+
+</LinearLayout>
