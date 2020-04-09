@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.e.fight_corona.Adapters.CoronoNewsAdapter;
@@ -37,6 +39,7 @@ public class corono_news extends AppCompatActivity
     RecyclerView recyclerView;
     List<CoronoNews> mnews;
     CoronoNewsAdapter coronoNewsAdapter;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,12 +48,13 @@ public class corono_news extends AppCompatActivity
         setContentView(R.layout.activity_corono_news);
         recyclerView=findViewById(R.id.recycler_view);
         textView=findViewById(R.id.text2);
+        progressBar=findViewById(R.id.progressbar);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager =new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
 
-
+        progressBar.setVisibility(View.VISIBLE);
         String myUrl = "https://newsapi.org/v2/everything?q=corona&apiKey=4b02ecab85ac4ca3a30e01c827a7bed8";
 
         HttpGetRequest getRequest = new HttpGetRequest();
@@ -116,7 +120,7 @@ public class corono_news extends AppCompatActivity
         protected void onPostExecute(List<CoronoNews> result)
         {
             super.onPostExecute(result);
-
+            progressBar.setVisibility(View.INVISIBLE);
             coronoNewsAdapter=new CoronoNewsAdapter(corono_news.this,mnews);
             recyclerView.setAdapter(coronoNewsAdapter);
         }

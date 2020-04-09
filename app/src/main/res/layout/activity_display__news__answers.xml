@@ -7,7 +7,8 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
 tools:context=".Display_News_Answers"
-    android:layout_marginTop="50dp" >
+    android:background="@drawable/cardbg"
+    android:paddingTop="50dp" >
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

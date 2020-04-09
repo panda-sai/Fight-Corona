@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.e.fight_corona.Adapters.NewsAdapter;
@@ -41,6 +42,7 @@ public class News_Analyse_Home extends AppCompatActivity
     CircleImageView post_news;
     FirebaseUser fuser;
     DatabaseReference reference;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,9 @@ public class News_Analyse_Home extends AppCompatActivity
         setContentView(R.layout.activity_news__analyse__home);
         post_news=findViewById(R.id.post_news);
         recyclerView=findViewById(R.id.recycler_view_diplay_news);
+        progressBar=findViewById(R.id.progressbar);
         recyclerView.setHasFixedSize(true);
+        progressBar.setVisibility(View.VISIBLE);
         LinearLayoutManager linearLayoutManager =new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -87,6 +91,7 @@ public class News_Analyse_Home extends AppCompatActivity
                     News news=snapshot.getValue(News.class);
                     assert  news!=null;
                     mNews.add(news);
+                    progressBar.setVisibility(View.INVISIBLE);
                     Collections.sort(mNews,new Newscomparator());
                     newsAdapter=new NewsAdapter(News_Analyse_Home.this,mNews);
                     recyclerView.setAdapter(newsAdapter);

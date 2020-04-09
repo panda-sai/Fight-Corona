@@ -133,11 +133,11 @@ public class Home extends AppCompatActivity
 
     private void big_picturestyle_Notification() {
         int notificationId = 2;
-        Bitmap picture = BitmapFactory.decodeResource(getResources(), R.drawable.logo);
+        Bitmap picture = BitmapFactory.decodeResource(getResources(), R.drawable.handwashing);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         builder.setSmallIcon(R.drawable.logo)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.logo))
-                .setContentTitle("Opened about page in Fight corona app")
+                .setContentTitle("Stay Hygienic. Wash Hands regularly ")
                 //style = BigPictureStyle
                 .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(picture))
                 .setAutoCancel(true);

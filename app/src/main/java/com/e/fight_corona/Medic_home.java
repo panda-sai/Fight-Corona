@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.e.fight_corona.Adapters.QueryAdapter;
 import com.e.fight_corona.Comparators.Querycomparator;
@@ -39,6 +40,7 @@ public class Medic_home extends AppCompatActivity
     DatabaseReference reference;
     CircleImageView floatingActionButton;
     FirebaseUser fuser;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -47,11 +49,13 @@ public class Medic_home extends AppCompatActivity
         setContentView(R.layout.activity_medic_home);
         recyclerView=findViewById(R.id.recycler_view);
         floatingActionButton=findViewById(R.id.floatingActionButton);
+        progressBar=findViewById(R.id.progressbar);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager =new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         fuser= FirebaseAuth.getInstance().getCurrentUser();
         reference=FirebaseDatabase.getInstance().getReference("Doctors").child(fuser.getUid());
+        progressBar.setVisibility(View.VISIBLE);
         reference.addValueEventListener(new ValueEventListener()
         {
             @SuppressLint("RestrictedApi")
@@ -89,6 +93,7 @@ public class Medic_home extends AppCompatActivity
 
                 }
                 Collections.sort(mquery,new Querycomparator());
+                progressBar.setVisibility(View.INVISIBLE);
                 queryAdapter=new QueryAdapter(Medic_home.this,mquery);
                 recyclerView.setAdapter(queryAdapter);
             }

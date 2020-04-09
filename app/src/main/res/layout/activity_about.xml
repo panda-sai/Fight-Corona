@@ -89,7 +89,7 @@ tools:context=".About"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="YouTuber @ Vamsi Bhavani | Student | Android Developer | Udemy Instructor | Machine Learning Enthusiast | Core Member @ RCS "
+                    android:text="Fascinated by robotics | Emerging Data scientist and Software Developer | Core Member @ RCS "
                     android:layout_margin="10dp"
                     android:gravity="center"
                     android:textColor="@color/White"
@@ -139,7 +139,7 @@ tools:context=".About"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="YouTuber @ Vamsi Bhavani | Student | Android Developer | Udemy Instructor | Machine Learning Enthusiast | Core Member @ RCS "
+                    android:text="Technology enthusiast | Communication engineer but interested in AI, ML, coding | Core Member @ RCS "
                     android:layout_margin="10dp"
                     android:gravity="center"
                     android:textColor="@color/White"
@@ -149,26 +149,32 @@ tools:context=".About"
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Acknowledgement"
                 android:textColor="@color/White"
-                android:fontFamily="serif-monospace"/>
+                android:fontFamily="serif-monospace"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/White"
-                android:text="\nLive News Content - newsapi.org"/>
+                android:text="Live News Content - newsapi.org"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/White"
-                android:text="\n\nAddress Location Service - Google Maps API"/>
+                android:text="Location Service - Google Maps API"
+                android:layout_marginBottom="10dp"/>
 
 
             <TextView
@@ -176,13 +182,16 @@ tools:context=".About"
                 android:layout_height="wrap_content"
                 android:text="Contact us:"
                 android:fontFamily="serif-monospace"
-                android:textColor="@color/White"/>
-
+                android:textColor="@color/White"
+                android:textSize="20dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="\ncontact.fightcorona@gmail.com"
-                android:textColor="@color/White"/>
+                android:text="contact.fightcorona@gmail.com"
+                android:textColor="@color/White"
+                android:layout_marginBottom="16dp"/>
 
         </LinearLayout>
 
