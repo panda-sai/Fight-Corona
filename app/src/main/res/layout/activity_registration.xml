@@ -90,36 +90,32 @@ android:gravity="center_vertical">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Doctor"
-                android:fontFamily="cursive"
                 android:textColor="@color/blue"
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:textSize="12dp"/>
             <RadioButton
                 android:id="@+id/radio_public"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Public"
-                android:fontFamily="cursive"
                 android:textColor="@color/blue"
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:textSize="12dp"/>
             <RadioButton
                 android:id="@+id/radio_collaborators"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Collaborator"
-                android:fontFamily="cursive"
                 android:textColor="@color/blue"
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:textSize="12dp"/>
             <RadioButton
                 android:id="@+id/volunteer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Volunteer"
-                android:fontFamily="cursive"
                 android:textColor="@color/blue"
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:textSize="12dp"/>
 
 
