@@ -63,11 +63,12 @@ public class Registration extends AppCompatActivity
             {
                 progressbar.setVisibility(View.VISIBLE);
                 final String emailValue, passwordValue,usernameValue,confirmPasswordValue;
-                final boolean isDoctor,isCollaborators,isvol;
+                final boolean isDoctor,isCollaborators,isvol,isuser;
                 usernameValue=username.getText().toString();
                 emailValue = email.getText().toString();
                 passwordValue = password.getText().toString();
                 confirmPasswordValue = confirmPassword.getText().toString();
+                isuser=people.isChecked();
                 isDoctor=doctor.isChecked();
                 isCollaborators=collaborators.isChecked();
                 isvol=volenteer.isChecked();
@@ -131,7 +132,7 @@ public class Registration extends AppCompatActivity
                             {
                                 databaseReference= FirebaseDatabase.getInstance().getReference("Volunteers").child(userid);
                             }
-                            else
+                            if(isuser)
                             {
                                 databaseReference= FirebaseDatabase.getInstance().getReference("Users").child(userid);
 

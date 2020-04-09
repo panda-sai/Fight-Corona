@@ -22,7 +22,7 @@ public class moneyactivity extends AppCompatActivity {
     private Button button;
     private EditText editText;
     private EditText nameEt;
-    private String upiId = "rinu1997@okicici";
+    private String upiId = "pmcares@sbi";
     private String nameOwner  = "Fight-Corona";
     final int UPI_PAYMENT = 0;
 

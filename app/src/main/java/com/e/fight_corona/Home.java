@@ -137,7 +137,7 @@ public class Home extends AppCompatActivity
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         builder.setSmallIcon(R.drawable.logo)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.logo))
-                .setContentTitle("Stay Hygienic. Wash Hands regularly ")
+                .setContentTitle("Time to wash your hands ")
                 //style = BigPictureStyle
                 .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(picture))
                 .setAutoCancel(true);
