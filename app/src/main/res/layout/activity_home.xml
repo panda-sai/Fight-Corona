@@ -55,7 +55,8 @@
                     android:clickable="true"
                     app:cardUseCompatPadding="true"
                     android:id="@+id/notes_card"
-                    android:background="@drawable/cardbg">
+                    android:background="@drawable/cardbg"
+                    android:focusable="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -69,9 +70,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:text="Medical Support"
-                            android:textStyle="bold"
+                            android:textStyle="italic"
                             android:textColor="@color/blue"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            />
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
@@ -83,7 +85,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Ask your doubts directly to the doctors."/>
+                            android:text="Ask your doubts directly to the doctors."
+                            android:textStyle="italic"/>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -110,9 +113,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:text="News Analyser"
-                            android:textStyle="bold"
+                            android:textStyle="italic"
                             android:gravity="center"
-                            android:textColor="@color/blue"/>
+                            android:textColor="@color/blue"
+                            />
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
@@ -124,7 +128,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Check the genuineness of the news."/>
+                            android:text="Check the genuineness of the news."
+                            android:textStyle="italic"/>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -159,8 +164,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="Live Updated      News "
-                            android:textStyle="bold"
+                            android:text="Live Updated News "
+                            android:textStyle="italic"
                             android:gravity="center"
                             android:textColor="@color/blue"/>
                         <View
@@ -174,7 +179,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Get the latest News about COVID-19"/>
+                            android:text="Get the latest News about COVID-19"
+                            android:textStyle="italic"/>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -200,7 +206,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:text="Support Human Community"
-                            android:textStyle="bold"
+                            android:textStyle="italic"
                             android:gravity="center"
                             android:textColor="@color/blue"/>
                         <View
@@ -214,6 +220,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="5dp"
+                            android:textStyle="italic"
                             android:text="Contribute whatever you can."/>
 
                     </LinearLayout>
@@ -249,7 +256,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:text="About Us"
-                            android:textStyle="bold"
+                            android:textStyle="italic"
                             android:gravity="center"
                             android:textColor="@color/blue"/>
                         <View
@@ -263,8 +270,51 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="5dp"
-
+                            android:textStyle="italic"
                             android:text="Know about the developers."/>
+
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="230dp"
+                    android:layout_margin="10dp"
+                    app:cardElevation="6dp"
+                    android:clickable="true"
+                    app:cardUseCompatPadding="true"
+                    android:id="@+id/logout"
+                    android:background="@drawable/cardbg">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Log out"
+                            android:textStyle="italic"
+                            android:gravity="center"
+                            android:textColor="@color/blue"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/lightgray"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:textStyle="italic"
+                            android:text="Logs out from the app."/>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

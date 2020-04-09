@@ -28,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Home extends AppCompatActivity
 {
-    CardView medicalSupport,news_analyser,latestNews,support,about;
+    CardView medicalSupport,news_analyser,latestNews,support,about,logout;
     FirebaseUser fuser;
     DatabaseReference reference;
 
@@ -83,6 +83,18 @@ public class Home extends AppCompatActivity
 
             }
         });
+        logout=findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent i= new Intent(Home.this,startup.class);
+                //i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                finish();
+            }
+        });
+
         support=findViewById(R.id.Supporting_candidate);
         support.setOnClickListener(new View.OnClickListener() {
             @Override
